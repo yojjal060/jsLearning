@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.outer-container{
+    width: 100%;
+    height: 45rem;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 11rem;
+    background-color: hsl(0, 0%, 94%);
+    
+}
+
+.outer{
+    padding: 2.5rem;
+    
+}
+
+/* //inner one */
+.inner-container{
+    
+    width: 60%;
+    height: 115%;
+    margin: auto;
+    border-radius: 0 0 8rem 0;
+    background-color: hsl(0, 0%, 100%);
+
+}
+
+.button-and-input{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 10rem;
+    margin-left: 2rem;
+    padding-top: 2rem;
+    
+    
+}
+
+h6{
+    color: hsl(0, 1%, 44%);
+    margin: 0rem 0rem 0.2rem 0rem;
+}
+
+
+.middle {
+    display: flex;
+    align-items: center;
+    
+    margin-left: 2.5rem;
+    margin-right: 4rem;
+    position: relative;
+  }
+
+.line-break {
+    flex-grow: 1;
+    
+    background: linear-gradient(to right, transparent, hsl(259, 100%, 65%), transparent);
+    
+  }
+
+.middle svg {
+    background-color: #7d5fff;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+.output-field{
+  margin-left: 2.5rem;
+}
+
+span{
+  color: hsl(259, 100%, 64%);
+  font-weight: bold;
+  
+  font: italic;
+  
+}
+
+h2{
+  font-weight: 1000;
+  font-size: 50px;
+  color: hsl(0, 0%, 8%);
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+/* input field */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.input {
+    width: 8rem;
+    background-color: #f5f5f5;
+    color: #242424;
+    padding: .12rem .2rem;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    
+    
+  }
+  
+  input:focus {
+    border: 2px solid #5b5fc7;
+    border-radius: 4px 4px 2px 2px;
+    caret-color: #5b5fc7;
+  }
+  
+  input:hover {
+    outline: 1px solid lightgrey;
+  }
