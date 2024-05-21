@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F7E9DC;
+}
+
+.container {
+    margin: auto;
+    
+}
+
+.balance-section{
+    background-color: hsl(10, 79%, 65%);
+}
