@@ -1,0 +1,23 @@
+.container{
+    align-items: center;
+    margin:50px 400px 0px 100px;
+}
+
+hr{
+    border: none;
+    height: 5px;
+    background-color: aquamarine;
+}
+
+h3{
+    color: rgb(32, 145, 107)
+}
+
+body{
+    margin: 0px;
+}
+
+p{
+    color: gray;
+    margin: 0px;
+}
