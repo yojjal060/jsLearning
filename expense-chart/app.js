@@ -1,12 +1,23 @@
 const ctx = document.getElementById('myChart');
 
+fetch('data.json')
+.then(function(response){
+    if(response.ok == true){
+        return response.json();
+    }
+})
+.then(function(data){
+    createChart(data,'bar');
+});
+
+function createChart(data,type){
   new Chart(ctx, {
-    type: 'bar',
+    type: type,
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: data.map(row=>row.day),
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: data.map(row=>row.amount),
         borderWidth: 1
       }]
     },
@@ -15,6 +26,9 @@ const ctx = document.getElementById('myChart');
         y: {
           beginAtZero: true
         }
-      }
+      },
+      maintainAspectRatio:false
     }
   });
+}
+
