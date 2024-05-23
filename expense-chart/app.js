@@ -20,7 +20,7 @@ function total() {
         jsonData.forEach(row => {
             totalAmount += row.amount;
         });
-    document.getElementById('totalAmount').textContent = totalAmount;
+    document.getElementById('totalAmount').textContent =`$${totalAmount}`;
 }
 
 function setChartType(chartType) {
@@ -75,15 +75,22 @@ function createChart(data, type) {
                 }
             },
             scales: {
+                
                 x: {
+                    
                     grid: {
                         display: false
                     }
                 },
                 y: {
+                    display:false,
+                    ticks:{
+                        display:false
+                    },
                     grid: {
                         display: false
-                    }
+                    },
+                    
                 }
             }
         }
