@@ -20,6 +20,7 @@
     </div>
 
     <div class="body-section">
+      <p id="spending">Spending - Last 7 days</p> 
       <div class="chart">
         <div class="chart_types">
           <button onclick="setChartType('bar')">Bars</button>
@@ -27,23 +28,17 @@
           <button onclick="setChartType('doughnut')">Pie</button>
           <button onclick="setChartType('polarArea')">polarArea</button>
           <button onclick="setChartType('radar')">Radar</button>
-        </div>
+      </div>
         <canvas id="myChart"></canvas>
       </div>
-    Spending - Last 7 days <br>
-      mon
-      tue
-      wed
-      thu
-      fri
-      sat
-      sun
     
+      
+      
 
       <div class="separator"></div>
       <div class="total-section">
         Total this month
-        $478.33
+        <p id="totalAmount"></p>
       </div>
       <div class="increment-section">
         +2.4%
