@@ -33,3 +33,7 @@ function toggleCart(){
     console.log("cart")
 }
 
+function toAdd(){
+    console.log("add")
+    console.log("yayay")
+}
