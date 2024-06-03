@@ -35,5 +35,5 @@ function toggleCart(){
 
 function toAdd(){
     console.log("add")
-    console.log("yayay")
+    console.log("yayayy")
 }
