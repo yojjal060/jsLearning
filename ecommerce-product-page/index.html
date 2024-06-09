@@ -2,152 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>E-commerce product page</title>
-
   <link rel="stylesheet" href="./output.css">
-
   <style>
     .underline-on-hover {
       position: relative;
     }
-  
     .underline-on-hover::after {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
       bottom: -50px;
-      
       height: 1px;
       background: rgb(251 146 60);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-  
     .underline-on-hover:hover::after {
       opacity: 1;
     }
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .cart-picture {
+      width: 3rem;
+    }
 
-.cart-picture{
-  width: 3rem;
-  
-}
-
+    .remove-btn{
+      margin-left: 25px;
+    }
+    
   </style>
-
-  </head>
+</head>
 <body>
- <nav class="flex flex-row justify-between items-center h-20">   
-  <div class="flex flex-row gap-20 ml-20">
-    <a href="#"><h3 class="font-extrabold text-xl  ">sneakers</h3></a> 
-    <a href="#" class="underline-on-hover font-thin text-sm   decoration-gray-800   hover:text-orange-400 hidden lg:block">Collections</a>
-    <a href="#" class="underline-on-hover font-thin text-sm   decoration-gray-800  hover:text-orange-400  hidden lg:block">Man</a>
-    <a href="#" class="underline-on-hover font-thin text-sm   decoration-gray-800  hover:text-orange-400  hidden lg:block">Woman</a>
-    <a href="#" class="underline-on-hover font-thin text-sm   decoration-gray-800  hover:text-orange-400  hidden lg:block">About</a>
-    <a href="#" class="underline-on-hover font-thin text-sm   decoration-gray-800  hover:text-orange-400  hidden lg:block">Contact</a>
-</div>
+  <nav class="flex flex-row justify-between items-center h-20">   
+    <div class="flex flex-row gap-20 ml-20">
+      <a href="#"><h3 class="font-extrabold text-xl">sneakers</h3></a> 
+      <a href="#" class="underline-on-hover font-thin text-sm decoration-gray-800 hover:text-orange-400 hidden lg:block">Collections</a>
+      <a href="#" class="underline-on-hover font-thin text-sm decoration-gray-800 hover:text-orange-400 hidden lg:block">Man</a>
+      <a href="#" class="underline-on-hover font-thin text-sm decoration-gray-800 hover:text-orange-400 hidden lg:block">Woman</a>
+      <a href="#" class="underline-on-hover font-thin text-sm decoration-gray-800 hover:text-orange-400 hidden lg:block">About</a>
+      <a href="#" class="underline-on-hover font-thin text-sm decoration-gray-800 hover:text-orange-400 hidden lg:block">Contact</a>
+    </div>
     <div class="ml-10 flex items-center gap-16">
-      <svg class="cursor-pointer" id="cart-image" onClick="toggleCart()" width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero" /></svg>
-      <img src="./images/image-avatar.png" alt="image" class=" mr-56 size-10 cursor-pointer hover:bg-orange-800 rounded-3xl">
+      <svg class="cursor-pointer" id="cart-image" onclick="toggleCart()" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero" />
+      </svg>
+      <img src="./images/image-avatar.png" alt="image" class="mr-56 size-10 cursor-pointer hover:bg-orange-800 rounded-3xl">
     </div>
-
-    
-  
-</nav>
-
-<div class="w-80 h-52 border border-black absolute right-60 bg-white font-poetsenone" id="whole-cart">
-  <h1 class="font-extrabold mb-4 mt-1">Cart</h1>
-  <hr class="w-full">
-  <div id="cart-items" class="flex flex-col items-center">
+  </nav>
+  <div class="w-86 h-48 border border-black absolute right-60 bg-white font-poetsenone hidden" id="whole-cart">
+    <h1 class="font-extrabold mb-4 mt-1">Cart</h1>
+    <hr class="w-full">
+    <div id="cart-items" class="flex flex-col items-center">
       <h3 class="flex justify-center items-center h-full text-gray-400">Your cart is empty.</h3>
-  </div>
-</div>
-
-<hr class="w-1000 h-px ml-20 mr-56 mt-0  border-0 rounded md:my-6 bg-gray-200 hidden lg:block">
-
-<!-- body --> 
-<div class=" w-max mt-12 ml-56 flex flex-row ">
-  <div class="left-body">
-    <img src="./images/image-product-1.jpg" alt="image" class="responsive-image w-100 rounded-3xl ">
-    <div id="four-images" class="mt-6 flex flex-row gap-10">
-      <img src="./images/image-product-1-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
-      <img src="./images/image-product-2-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
-      <img src="./images/image-product-3-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
-      <img src="./images/image-product-4-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
-    </div>
-  </div>
-  <div class="right-body ml-16 mt-12">
-    <h5 class="font-poetsenone font-semibold text-xs Light ">SNEAKER COMPANY</h5>
-    <h1 class="font-extrabold text-3xl">Fall Limited Edition <br> Sneakers</h1>
-    <p class="text-xs text-gray-500 font-poetsenone mt-6" >These low-profile sneakers are your perfect casual wear <br> companion. Featuring a 
-      durable rubber outer sole, they'll <br> withstand everything the weather can offer.
-    </p>
-    <div class="flex mt-5">
-      <h1 class="font-extrabold text-2xl mr-3">$125.00</h1>
-      <span class="text-white bg-black text-center rounded-md w-11 h-5 text-sm mt-2 font-bold">50%</span>
     </div>
 
-    <p class="text-xs text-gray-500 line-through font-bold mt-3">$250.00</p>
     
-    <div class="flex flex-row items-center mt-5">
-      <button onclick="decrement()" class="bg-gray-200 p-2 rounded-l-md flex" id="decrement">
-        <svg class=" w-3 h-1 fill-current text-customorange mt-2" width="12" height="4" xmlns="http://www.w3.org/2000/svg"><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" fill-rule="nonzero"/></svg>
-      </button>
-      <input type="number" class="w-12 text-center" value="0" id="addSubValue">
-      <button onclick="increment()" class="bg-gray-200 p-2 rounded-r-md" id="increment">
-        <svg class="w-3 h-3 fill-current text-customorange" width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" fill-rule="nonzero"/></svg>
-      </button>
-      <button  onCLick="toAdd()" class="flex items-center justify-center flex-grow ml-4 py-3 px-6 bg-customorange text-white rounded-md" id="addToCart">
-        <svg class="w-5 h-5 mr-2 fill-current " width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#000000" fill-rule="nonzero"/>
-        </svg>
-        <span class="text-black ml-2">Add to cart</span>
-      </button>
-    </div>
-
 
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- Collections
-
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0 25
-  Add to cart -->
+  <hr class="w-1000 h-px ml-20 mr-56 mt-0 border-0 rounded md:my-6 bg-gray-200 hidden lg:block">
+  <div class="w-max mt-12 ml-56 flex flex-row mr-80">
+    <div class="left-body">
+      <img src="./images/image-product-1.jpg" alt="image" class="responsive-image w-100 rounded-3xl">
+      <div id="four-images" class="mt-6 flex flex-row gap-10">
+        <img src="./images/image-product-1-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
+        <img src="./images/image-product-2-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
+        <img src="./images/image-product-3-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
+        <img src="./images/image-product-4-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block">
+      </div>
+    </div>
+    <div class="right-body ml-16 mt-12 w-1/4">
+      <h5 class="font-poetsenone font-semibold text-xs Light">SNEAKER COMPANY</h5>
+      <h1 class="font-extrabold text-3xl">Fall Limited Edition <br> Sneakers</h1>
+      <p class="text-xs text-gray-500 font-poetsenone mt-6">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+      <div class="flex mt-5">
+        <h1 class="font-extrabold text-2xl mr-3">$125.00</h1>
+        <span class="text-white bg-black text-center rounded-md w-11 h-5 text-sm mt-2 font-bold">50%</span>
+      </div>
+      <p class="text-xs text-gray-500 line-through font-bold mt-3">$250.00</p>
+      <div class="flex flex-row items-center mt-5">
+        <button onclick="decrement()" class="bg-gray-200 p-2 rounded-l-md flex" id="decrement">
+          <svg class="w-3 h-1 fill-current text-customorange mt-2" width="12" height="4" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" fill-rule="nonzero" />
+          </svg>
+        </button>
+        <input type="number" class="w-12 text-center" value="0" id="addSubValue">
+        <button onclick="increment()" class="bg-gray-200 p-2 rounded-r-md" id="increment">
+          <svg class="w-3 h-3 fill-current text-customorange" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" fill-rule="nonzero" />
+          </svg>
+        </button>
+        <button onclick="toAdd()" class="flex items-center justify-center flex-grow ml-4 py-3 px-6 bg-customorange text-white rounded-md" id="addToCart">
+          <svg class="w-5 h-5 mr-2 fill-current" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#000000" fill-rule="nonzero" />
+          </svg>
+          <span class="text-black ml-2">Add to cart</span>
+        </button>
+      </div>
+    </div>
+  </div>
   <script src="./app.js"></script>
 </body>
 </html>
