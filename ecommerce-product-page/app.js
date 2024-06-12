@@ -1,5 +1,6 @@
 let value = 0;
 
+
 function increment() {
   const input = document.getElementById('addSubValue');
   value = parseInt(input.value, 10);
@@ -62,3 +63,21 @@ function removeItem(button) {
     }
   }
   
+
+document.querySelectorAll('#four-images img')
+Image.addEventListener("click",function(){
+  fullImage(this.src);
+})
+
+function fullImage(src){
+  let modal = document.getElementById("imageModal");
+  let modalImg = document.getElementById("fullImage");
+  
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeModal(){
+  let modal = document.getElementById("imageModal");
+  modal.style.display = "none";
+}

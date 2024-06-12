@@ -37,6 +37,37 @@
       margin-left: 25px;
     }
     
+    .popup-image{
+      position: fixed;
+      top: 0; left: 0;
+      background: rgba(0, 0, 0, .9);
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+      display: none;
+
+    }
+
+    .popup-image > span{
+      position: absolute;
+      top: 0; right: 10px;
+      font-size: 60px;
+      font-weight: bolder;
+      color: #fff;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .popup-image > img{
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      
+      border-radius: 5px;
+      width: 750px;
+      object-fit: cover;
+    }
+
   </style>
 </head>
 <body>
@@ -71,12 +102,19 @@
     <div class="left-body">
       <img src="./images/image-product-1.jpg" alt="image" class="responsive-image w-100 rounded-3xl">
       <div id="four-images" class="mt-6 flex flex-row gap-10">
-        <img onclick="fullImage('./images/image-product-1-thumbnail.jpg')" src="./images/image-product-1-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
-        <img onCLick="fullImage('./images/image-product-2-thumbnail.jpg')" src="./images/image-product-2-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
-        <img onClick="fullImage('./images/image-product-4-thumbnail.jpg')" src="./images/image-product-4-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
-        <img onClick="fullImage('./images/image-product-4-thumbnail.jpg')" src="./images/image-product-4-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
+        <img onClick="fullImage('./images/image-product-1.jpg')" src="./images/image-product-1-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
+        <img onCLick="fullImage('./images/image-product-2.jpg')" src="./images/image-product-2-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
+        <img onClick="fullImage('./images/image-product-3.jpg')" src="./images/image-product-4-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
+        <img onClick="fullImage('./images/image-product-4.jpg')" src="./images/image-product-4-thumbnail.jpg" alt="sneaker image" class="w-17 rounded-xl hidden lg:block cursor-pointer">
       </div>
     </div>
+
+    <div id ="imageModal" class="popup-image">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="fullImage" alt="">
+    </div>
+
+
     <div class="right-body ml-16 mt-12 w-1/4">
       <h5 class="font-poetsenone font-semibold text-xs Light">SNEAKER COMPANY</h5>
       <h1 class="font-extrabold text-3xl">Fall Limited Edition <br> Sneakers</h1>
